@@ -15,9 +15,24 @@ getinsertionsort.addEventListener("click", insertionSort);
 
 const body=document.getElementById('mainbody');
 var array=[];
-generateArray();
+array=[];
+    let i=1;
+    for(i=1;i<=100;i++){
+   let temp= Math.floor(Math.random()*(500-5)+5);
+   array.push(temp);
+    }
+
+for(let i=0;i<100;i++){
+  var div=document.createElement('div');
+  div.className='bars';
+  div.innerHTML=":";
+  div.id=`${array[i]}#`;
+  div.style.height=`${array[i]}px`;
+  body.appendChild(div);
+}
 
 function generateArray(){
+  heading.textContent='Random array is generated';
     array=[];
     let i=1;
     for(i=1;i<=100;i++){
@@ -28,14 +43,11 @@ function generateArray(){
 }
 
 function changeArray(){
-for(let i=0;i<100;i++){
-    var div=document.createElement('div');
-    div.className='bars';
-    div.innerHTML=":";
-    div.id=`${array[i]}#`;
-    div.style.height=`${array[i]}px`;
-    body.appendChild(div);
-}
+  const arrayBars = document.getElementsByClassName('bars');
+  for(let i=0;i<100;i++){
+    arrayBars[i].style.height=`${array[i]}px`;
+    arrayBars[i].style.backgroundColor='blue';
+  } 
 }
 
 function mergeSort() {
