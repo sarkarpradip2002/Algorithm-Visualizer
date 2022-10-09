@@ -1,0 +1,33 @@
+#mainbody{
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+#heading{
+    font-size: 50px;
+    text-align: center;
+    text-decoration: underline;
+    padding: 24px;
+    color: #e91e63;
+}
+.bars{
+    margin: 0px 2px;
+    width: 4px;
+    background-color: blue;
+}
+#buttons-list{
+    display: flex;
+    margin-top: 9vh;
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    margin-left: 24px;
+    padding: 10px;
+    font-size: 21px;
+    background-color: #dd4277;
+    color: white;
+    border-radius: 14px;
+    border: 2px solid #2ee7ff;
+    cursor: pointer;
+}
