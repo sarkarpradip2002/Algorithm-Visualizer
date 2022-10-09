@@ -1,6 +1,7 @@
 import { getMergeSortAnimations } from "./mergesort.js";
 import { getBubbleSortAnimations } from "./bubblesort.js";
 import { getInsertionSortAnimations } from "./insertionsort.js";
+import { getSelectionSortAnimations } from "./selectionsort.js";
 
 const heading=document.getElementById('heading');
 
@@ -12,6 +13,8 @@ const getbubblesort=document.getElementById('bubble');
 getbubblesort.addEventListener("click", bubbleSort);
 const getinsertionsort=document.getElementById('insertion');
 getinsertionsort.addEventListener("click", insertionSort);
+const getselectionsort=document.getElementById('selection');
+getselectionsort.addEventListener("click", selectionSort);
 
 const body=document.getElementById('mainbody');
 var array=[];
@@ -119,5 +122,51 @@ function mergeSort() {
         barTwoStyle.backgroundColor='green';
       }, i*5);
 
+    }
+  }
+
+
+  function selectionSort() {
+    heading.textContent='Selection Sort';
+    const animations=getSelectionSortAnimations(array);
+    for(let i=0;i<animations.length;i++){
+      const arrayBars = document.getElementsByClassName('bars');
+      if(animations[i].length===2){
+        const [firstInd,secondInd]=animations[i];
+        const barOneStyle = arrayBars[firstInd].style;
+        const barTwoStyle = arrayBars[secondInd].style;
+        setTimeout(() => {
+          barOneStyle.backgroundColor='black';
+          barTwoStyle.backgroundColor='black';
+        }, i*5);
+        setTimeout(() => {
+          barOneStyle.backgroundColor='blue';
+          barTwoStyle.backgroundColor='blue';
+        }, i*5);
+      }
+      else if(animations[i].length===1){
+        const [changeInd]=animations[i];
+        const changeStyle = arrayBars[changeInd].style;
+        setTimeout(() => {
+          changeStyle.backgroundColor='red';
+        }, i*5);
+      }
+      
+      else{  const [firstInd,secondInd,firstvalue,secondvalue]=animations[i];
+        const barOneStyle = arrayBars[firstInd].style;
+        const barTwoStyle = arrayBars[secondInd].style;
+        setTimeout(() => {
+          barOneStyle.backgroundColor='red';
+          barTwoStyle.backgroundColor='red';
+        }, i*5);
+        setTimeout(() => {
+          barOneStyle.height=`${firstvalue}px`;
+           barTwoStyle.height=`${secondvalue}px`;
+        }, i*5);
+        setTimeout(() => {
+          barOneStyle.backgroundColor='green';
+          barTwoStyle.backgroundColor='green';
+        }, i*5);
+      }
     }
   }
