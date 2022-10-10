@@ -1,0 +1,28 @@
+.grids{
+    border: 1px solid white;
+    height: 43px;
+    width: 23px;
+    background-color: #7f38ff;
+}
+#body{
+    display: flex;
+    justify-content: center;
+    height: 51vh;
+    align-items: center;
+}
+#input{
+    display: flex;
+    justify-content: center;
+}
+#box{
+    height: 26px;
+    border-radius: 15px;
+    padding: 11px;
+    font-size: 29px;
+    width: 81px;
+    text-align: center;
+}
+#inputhead{
+    font-size: 36px;
+    margin-right: 19px;
+}
