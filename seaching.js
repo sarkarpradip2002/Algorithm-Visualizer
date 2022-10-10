@@ -1,8 +1,5 @@
 import { getBruteForceAnimations } from "./bruteforcesearch.js";
-<<<<<<< HEAD
-=======
 var audio = new Audio('beep3.mp3');
->>>>>>> 5718530 (Adding changes)
 
 let body=document.getElementById("body");
 let getnumber=document.getElementById("box");
@@ -63,10 +60,7 @@ for(let i=0;i<30;i++){
         else{
             const [barstyle,barnumber]=animations[i];
             setTimeout(() => {
-<<<<<<< HEAD
-=======
                 audio.play();
->>>>>>> 5718530 (Adding changes)
                 arraygrids[barstyle].style.backgroundColor='green';
             }, (i+1)*300);
         }
