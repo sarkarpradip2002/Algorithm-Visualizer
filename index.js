@@ -2,6 +2,10 @@ import { getMergeSortAnimations } from "./mergesort.js";
 import { getBubbleSortAnimations } from "./bubblesort.js";
 import { getInsertionSortAnimations } from "./insertionsort.js";
 import { getSelectionSortAnimations } from "./selectionsort.js";
+<<<<<<< HEAD
+=======
+var audio = new Audio('beep3.mp3');
+>>>>>>> 5718530 (Adding changes)
 
 const heading=document.getElementById('heading');
 
@@ -74,6 +78,10 @@ function mergeSort() {
           const barOneStyle = arrayBars[barOneIdx].style;
           barOneStyle.height = `${newHeight}px`;
           arrayBars[barOneIdx].innerHTML=`${newHeight}`;
+<<<<<<< HEAD
+=======
+          audio.play();
+>>>>>>> 5718530 (Adding changes)
           barOneStyle.color='#e91e63';
         }, i * 10);
       }
@@ -93,6 +101,10 @@ function mergeSort() {
       barTwoStyle.backgroundColor='red';
     }, i*5);
     setTimeout(() => {
+<<<<<<< HEAD
+=======
+      audio.play();
+>>>>>>> 5718530 (Adding changes)
       barOneStyle.height=`${firstvalue}px`;
       arrayBars[firstInd].innerHTML=`${firstvalue}`;
       barOneStyle.color='#e91e63';
@@ -121,6 +133,10 @@ function mergeSort() {
         barTwoStyle.backgroundColor='red';
       }, i*5);
       setTimeout(() => {
+<<<<<<< HEAD
+=======
+        audio.play();
+>>>>>>> 5718530 (Adding changes)
         barOneStyle.height=`${firstvalue}px`;
         barOneStyle.color='#e91e63';
         arrayBars[firstInd].innerHTML=`${firstvalue}`;
@@ -168,6 +184,10 @@ function mergeSort() {
           barTwoStyle.backgroundColor='red';
         }, i*5);
         setTimeout(() => {
+<<<<<<< HEAD
+=======
+          audio.play();
+>>>>>>> 5718530 (Adding changes)
           barOneStyle.height=`${firstvalue}px`;
           arrayBars[firstInd].innerHTML=`${firstvalue}`;
           barOneStyle.color='#e91e63';
