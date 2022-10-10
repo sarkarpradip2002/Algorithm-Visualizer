@@ -20,7 +20,7 @@ array.push(temp);
 for(let i=0;i<30;i++){
 var div=document.createElement('div');
   div.className='grids';
-  div.innerHTML=":";
+  div.innerHTML=`${array[i]}`;
   div.style.height=`${Math.floor(array[i]*5+3)}px`;
   body.appendChild(div);
 }
@@ -35,6 +35,7 @@ array.push(temp);
 }
 const arraygrids = document.getElementsByClassName('grids');
 for(let i=0;i<30;i++){
+    arraygrids[i].innerHTML=`${array[i]}`;
   arraygrids[i].style.height=`${array[i]*5+3}px`;
   arraygrids[i].style.backgroundColor='#7f38ff';
 } 

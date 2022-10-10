@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,22 +10,38 @@
     <link rel="icon" href="img.png">
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
+    <div id="checkbody">
+        <div class="checkhead">
+           <div id="yellow"></div>
+           <div class="check">Checking..</div>
+        </div>
+        <div class="checkhead">
+            <div id="red"></div>
+            <div class="check">Not Matched</div>
+        </div>
+        <div class="checkhead">
+            <div id="green"></div>
+            <div><Matched class="check">Matched</div>
+        </div>
+    </div>
     <div id="body">
     </div>
-    
+
     <div id="input">
-    <div id="inputhead">Put a number to search (1 to 50)-</div>
-    <input type="text" id="box">
+        <div id="inputhead">Put a number to search (0 to 50)-</div>
+        <input type="text" id="box">
     </div>
     <div id="result">
 
     </div>
     <div id="buttons-list">
-    <button id="generate" class="button" >Generate a array</button>
-    <button id="bruteforce" class="button">Brute Force Search</button>
-    <button id="bruteforce" class="button"><a href="index.html" class="link">Back To Sorting</a></button>
+        <button id="generate" class="button">Generate a array</button>
+        <button id="bruteforce" class="button">Brute Force Search</button>
+        <button id="bruteforce" class="button"><a href="index.html" class="link">Back To Sorting</a></button>
     </div>
 </body>
 <script defer type="module" src="seaching.js"></script>
+
 </html>

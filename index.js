@@ -28,8 +28,7 @@ array=[];
 for(let i=0;i<100;i++){
   var div=document.createElement('div');
   div.className='bars';
-  div.innerHTML=":";
-  div.id=`${array[i]}#`;
+  div.innerHTML=`${array[i]}`;
   div.style.height=`${array[i]}px`;
   body.appendChild(div);
 }
@@ -49,7 +48,8 @@ function changeArray(){
   const arrayBars = document.getElementsByClassName('bars');
   for(let i=0;i<100;i++){
     arrayBars[i].style.height=`${array[i]}px`;
-    arrayBars[i].style.backgroundColor='blue';
+    arrayBars[i].innerHTML=`${array[i]}`;
+    arrayBars[i].style.backgroundColor='#00bcd4';
   } 
 }
 
@@ -63,7 +63,7 @@ function mergeSort() {
         const [barOneIdx, barTwoIdx] = animations[i];
         const barOneStyle = arrayBars[barOneIdx].style;
         const barTwoStyle = arrayBars[barTwoIdx].style;
-        const color = i % 3 === 0 ? 'red' : 'green';
+        const color = i % 3 === 0 ? 'red' : '#acf755';
         setTimeout(() => {
           barOneStyle.backgroundColor = color;
           barTwoStyle.backgroundColor = color;
@@ -73,6 +73,8 @@ function mergeSort() {
           const [barOneIdx, newHeight] = animations[i];
           const barOneStyle = arrayBars[barOneIdx].style;
           barOneStyle.height = `${newHeight}px`;
+          arrayBars[barOneIdx].innerHTML=`${newHeight}`;
+          barOneStyle.color='#e91e63';
         }, i * 10);
       }
     }
@@ -92,11 +94,15 @@ function mergeSort() {
     }, i*5);
     setTimeout(() => {
       barOneStyle.height=`${firstvalue}px`;
+      arrayBars[firstInd].innerHTML=`${firstvalue}`;
+      barOneStyle.color='#e91e63';
       barTwoStyle.height=`${secondvalue}px`;
+      arrayBars[secondInd].innerHTML=`${secondvalue}`;
+      barTwoStyle.color='#e91e63';
     }, i*5);
     setTimeout(() => {
-      barOneStyle.backgroundColor='green';
-      barTwoStyle.backgroundColor='green';
+      barOneStyle.backgroundColor='#acf755';
+      barTwoStyle.backgroundColor='#acf755';
     }, i*5);
    }
   }
@@ -116,10 +122,12 @@ function mergeSort() {
       }, i*5);
       setTimeout(() => {
         barOneStyle.height=`${firstvalue}px`;
+        barOneStyle.color='#e91e63';
+        arrayBars[firstInd].innerHTML=`${firstvalue}`;
       }, i*5);
       setTimeout(() => {
-        barOneStyle.backgroundColor='green';
-        barTwoStyle.backgroundColor='green';
+        barOneStyle.backgroundColor='#acf755';
+        barTwoStyle.backgroundColor='#acf755';
       }, i*5);
 
     }
@@ -161,11 +169,15 @@ function mergeSort() {
         }, i*5);
         setTimeout(() => {
           barOneStyle.height=`${firstvalue}px`;
+          arrayBars[firstInd].innerHTML=`${firstvalue}`;
+          barOneStyle.color='#e91e63';
            barTwoStyle.height=`${secondvalue}px`;
+           arrayBars[secondInd].innerHTML=`${secondvalue}`;
+           barTwoStyle.color='#e91e63';
         }, i*5);
         setTimeout(() => {
-          barOneStyle.backgroundColor='green';
-          barTwoStyle.backgroundColor='green';
+          barOneStyle.backgroundColor='#acf755';
+          barTwoStyle.backgroundColor='#acf755';
         }, i*5);
       }
     }

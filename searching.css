@@ -1,8 +1,23 @@
+*{
+    background-color: black;
+}
 .grids{
     border: 1px solid white;
+    color: white;
     height: 43px;
     width: 23px;
     background-color: #7f38ff;
+    transition: all .4s ease-in-out;
+    font-size: 1px;
+    text-align: center;
+}
+.grids:hover{
+    cursor: pointer;
+    font-size: 25px;
+    padding-top: 7px;
+    width: 47px;
+    font-weight: bold;
+    font-size: 25px;
 }
 #body{
     display: flex;
@@ -13,6 +28,7 @@
 #input{
     display: flex;
     justify-content: center;
+    color: white;
 }
 #box{
     height: 26px;
@@ -21,8 +37,41 @@
     font-size: 29px;
     width: 81px;
     text-align: center;
+    color: white;
 }
 #inputhead{
     font-size: 36px;
     margin-right: 19px;
+    color: white;
+}
+.check{
+    color: white;
+}
+#checkbody{
+    display: flex;
+    margin-top: 22px;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+}
+.checkhead{
+    display: flex;
+    justify-content: space-around;
+}
+#yellow{
+    background-color: yellow;
+    height: 27px;
+    width: 27px;
+    margin-right: 13px;
+}
+#red{
+    background-color: red;
+    height: 27px;
+    width: 27px;
+    margin-right: 13px;
+}
+#green{
+    background-color: green;
+    height: 27px;
+    width: 27px;
+    margin-right: 13px;
 }
