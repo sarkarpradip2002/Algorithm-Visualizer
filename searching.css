@@ -15,7 +15,7 @@
     cursor: pointer;
     font-size: 25px;
     padding-top: 7px;
-    width: 47px;
+    width: 47px !important;
     font-weight: bold;
     font-size: 25px;
 }
@@ -74,4 +74,20 @@
     height: 27px;
     width: 27px;
     margin-right: 13px;
+}
+#slider{
+    display: flex;
+    justify-content: center;
+    margin-top: 68px;
+}
+#sliderhead{
+    color: white;
+    font-size: 25px;
+    margin-right: 26px;
+}
+.slidecontainer{
+    width: 18%;
+}
+#value{
+    width: 45%;
 }

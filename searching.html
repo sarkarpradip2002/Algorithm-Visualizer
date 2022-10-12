@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algorithm Visualizer-Searching</title>
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="searching.css">
     <link rel="icon" href="img.png">
-    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -26,6 +26,13 @@
             <div><Matched class="check">Matched</div>
         </div>
     </div>
+    <div id="slider">
+        <div id="sliderhead">Array Length controller </div>
+    <div style="margin-top: 10px;" class="slidecontainer">
+        <input type="range" min="2" max="30" value="30" class="slider" id="myRange">
+        <p id="value">Value: <span id="demo"></span></p>
+      </div>
+      </div>
     <div id="body">
     </div>
 
@@ -40,7 +47,9 @@
         <button id="generate" class="button">Generate a array</button>
         <button id="bruteforce" class="button">Brute Force Search</button>
         <button id="binary" class="button">Binary Search</button>
-        <button id="bruteforce" class="button"><a href="index.html" class="link">Back To Sorting</a></button>
+        <button class="button"><a href="index.html" class="link">Back To Sorting</a></button>        
+        <!-- <button id="interpolation" class="button"><a href="index.html" class="link">Back To Sorting</a></button>         -->
+
     </div>
 </body>
 <script defer type="module" src="seaching.js"></script>

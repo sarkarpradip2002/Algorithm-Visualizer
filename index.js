@@ -1,11 +1,22 @@
+// Importing the sorting algorithm animations from the js files
 import { getMergeSortAnimations } from "./mergesort.js";
 import { getBubbleSortAnimations } from "./bubblesort.js";
 import { getInsertionSortAnimations } from "./insertionsort.js";
 import { getSelectionSortAnimations } from "./selectionsort.js";
+
+// Adding audio
 var audio=new Audio('beep3.mp3');
 
-const heading=document.getElementById('heading');
+// All the DOM elemnets
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
 
+const heading=document.getElementById('heading');
+const changeheading=document.getElementById('changehead');
+var output = document.getElementById("demo");
+output.innerHTML = 100;
+
+// Initilize the onclickhandelers
 const generateArrayKey=document.getElementById('generate');
 generateArrayKey.addEventListener("click", generateArray);
 const getmergesort=document.getElementById('merge');
@@ -17,6 +28,7 @@ getinsertionsort.addEventListener("click", insertionSort);
 const getselectionsort=document.getElementById('selection');
 getselectionsort.addEventListener("click", selectionSort);
 
+// Deafult Array
 const body=document.getElementById('mainbody');
 var array=[];
 array=[];
@@ -31,14 +43,42 @@ for(let i=0;i<100;i++){
   div.className='bars';
   div.innerHTML=`${array[i]}`;
   div.style.height=`${array[i]}px`;
+  div.style.width=`${Math.floor(400/100)}px`;
   body.appendChild(div);
 }
 
+// Change the array as the slider value
+var arrayval=100;
+slider.oninput = function() {
+  output.innerHTML = slider.value;
+  arrayval=this.value;
+  array=[];
+    let i=1;
+    for(i=1;i<=this.value;i++){
+   let temp= Math.floor(Math.random()*(500-5)+5);
+   array.push(temp);
+    }
+
+  while (body.firstChild) {
+    body.removeChild(body.firstChild);
+}
+
+for(let i=0;i<this.value;i++){
+  var div=document.createElement('div');
+  div.className='bars';
+  div.innerHTML=`${array[i]}`;
+  div.style.height=`${array[i]}px`;
+  div.style.width=`${Math.floor(400/this.value)}px`;
+  body.appendChild(div);
+}
+}
+
+// Generate an random array by clicking generate array
 function generateArray(){
-  heading.textContent='Random array is generated';
+  changeheading.innerText='Random array is generated';
     array=[];
     let i=1;
-    for(i=1;i<=100;i++){
+    for(i=1;i<=arrayval;i++){
    let temp= Math.floor(Math.random()*(500-5)+5);
    array.push(temp);
     }
@@ -47,15 +87,16 @@ function generateArray(){
 
 function changeArray(){
   const arrayBars = document.getElementsByClassName('bars');
-  for(let i=0;i<100;i++){
+  for(let i=0;i<arrayval;i++){
     arrayBars[i].style.height=`${array[i]}px`;
     arrayBars[i].innerHTML=`${array[i]}`;
     arrayBars[i].style.backgroundColor='#00bcd4';
   } 
 }
 
+// Merge sort button animations 
 function mergeSort() {
-    heading.textContent='Merge Sort';
+    changeheading.textContent='Merge Sort';
     const animations = getMergeSortAnimations(array);
     for (let i = 0; i < animations.length; i++) {
       const arrayBars = document.getElementsByClassName('bars');
@@ -82,8 +123,9 @@ function mergeSort() {
     }
   }
 
+  // Bubble sort button animations
   function bubbleSort(){
-    heading.textContent='Bubble Sort';
+    changeheading.textContent='Bubble Sort';
     const animations=getBubbleSortAnimations(array);
    for(let i=0;i<animations.length;i++){
     const arrayBars = document.getElementsByClassName('bars');
@@ -110,9 +152,9 @@ function mergeSort() {
    }
   }
 
-
+// Insertion sort button animations
   function insertionSort(){
-    heading.textContent='Insertion Sort';
+    changeheading.textContent='Insertion Sort';
     const animations=getInsertionSortAnimations(array);
     for(let i=0;i<animations.length;i++){
       const arrayBars = document.getElementsByClassName('bars');
@@ -137,9 +179,9 @@ function mergeSort() {
     }
   }
 
-
+// Selection sort button animations
   function selectionSort() {
-    heading.textContent='Selection Sort';
+    changeheading.textContent='Selection Sort';
     const animations=getSelectionSortAnimations(array);
     for(let i=0;i<animations.length;i++){
       const arrayBars = document.getElementsByClassName('bars');
@@ -150,18 +192,18 @@ function mergeSort() {
         setTimeout(() => {
           barOneStyle.backgroundColor='black';
           barTwoStyle.backgroundColor='black';
-        }, i*5);
+        }, i*10);
         setTimeout(() => {
           barOneStyle.backgroundColor='blue';
           barTwoStyle.backgroundColor='blue';
-        }, i*5);
+        }, i*10);
       }
       else if(animations[i].length===1){
         const [changeInd]=animations[i];
         const changeStyle = arrayBars[changeInd].style;
         setTimeout(() => {
           changeStyle.backgroundColor='red';
-        }, i*5);
+        }, i*10);
       }
       
       else{  const [firstInd,secondInd,firstvalue,secondvalue]=animations[i];
@@ -170,7 +212,7 @@ function mergeSort() {
         setTimeout(() => {
           barOneStyle.backgroundColor='red';
           barTwoStyle.backgroundColor='red';
-        }, i*5);
+        }, i*10);
         setTimeout(() => {
           audio.play();
           barOneStyle.height=`${firstvalue}px`;
@@ -179,11 +221,11 @@ function mergeSort() {
            barTwoStyle.height=`${secondvalue}px`;
            arrayBars[secondInd].innerHTML=`${secondvalue}`;
            barTwoStyle.color='#e91e63';
-        }, i*5);
+        }, i*10);
         setTimeout(() => {
           barOneStyle.backgroundColor='#acf755';
           barTwoStyle.backgroundColor='#acf755';
-        }, i*5);
+        }, i*10);
       }
     }
   }
