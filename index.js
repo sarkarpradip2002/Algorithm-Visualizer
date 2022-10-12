@@ -95,6 +95,7 @@ function mergeSort() {
       barTwoStyle.backgroundColor='red';
     }, i*5);
     setTimeout(() => {
+      audio.play();
       barOneStyle.height=`${firstvalue}px`;
       arrayBars[firstInd].innerHTML=`${firstvalue}`;
       barOneStyle.color='#e91e63';
