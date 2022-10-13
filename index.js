@@ -109,7 +109,7 @@ function mergeSort() {
         setTimeout(() => {
           barOneStyle.backgroundColor = color;
           barTwoStyle.backgroundColor = color;
-        }, i * 10);
+        }, i * (1000/arrayval));
       } else {
         setTimeout(() => {
           const [barOneIdx, newHeight] = animations[i];
@@ -118,7 +118,7 @@ function mergeSort() {
           arrayBars[barOneIdx].innerHTML=`${newHeight}`;
           audio.play();
           barOneStyle.color='#e91e63';
-        }, i * 10);
+        }, i * (1000/arrayval));
       }
     }
   }
@@ -135,7 +135,7 @@ function mergeSort() {
     setTimeout(() => {
       barOneStyle.backgroundColor='red';
       barTwoStyle.backgroundColor='red';
-    }, i*5);
+    }, i*(500/arrayval));
     setTimeout(() => {
       audio.play();
       barOneStyle.height=`${firstvalue}px`;
@@ -144,11 +144,11 @@ function mergeSort() {
       barTwoStyle.height=`${secondvalue}px`;
       arrayBars[secondInd].innerHTML=`${secondvalue}`;
       barTwoStyle.color='#e91e63';
-    }, i*5);
+    }, i*(500/arrayval));
     setTimeout(() => {
       barOneStyle.backgroundColor='#acf755';
       barTwoStyle.backgroundColor='#acf755';
-    }, i*5);
+    }, i*(500/arrayval));
    }
   }
 
@@ -164,17 +164,17 @@ function mergeSort() {
       setTimeout(() => {
         barOneStyle.backgroundColor='red';
         barTwoStyle.backgroundColor='red';
-      }, i*5);
+      }, i*(500/arrayval));
       setTimeout(() => {
         audio.play();
         barOneStyle.height=`${firstvalue}px`;
         barOneStyle.color='#e91e63';
         arrayBars[firstInd].innerHTML=`${firstvalue}`;
-      }, i*5);
+      }, i*(500/arrayval));
       setTimeout(() => {
         barOneStyle.backgroundColor='#acf755';
         barTwoStyle.backgroundColor='#acf755';
-      }, i*5);
+      }, i*(500/arrayval));
 
     }
   }
@@ -192,18 +192,18 @@ function mergeSort() {
         setTimeout(() => {
           barOneStyle.backgroundColor='black';
           barTwoStyle.backgroundColor='black';
-        }, i*10);
+        }, i*(1000/arrayval));
         setTimeout(() => {
           barOneStyle.backgroundColor='blue';
           barTwoStyle.backgroundColor='blue';
-        }, i*10);
+        }, i*(1000/arrayval));
       }
       else if(animations[i].length===1){
         const [changeInd]=animations[i];
         const changeStyle = arrayBars[changeInd].style;
         setTimeout(() => {
           changeStyle.backgroundColor='red';
-        }, i*10);
+        }, i*(1000/arrayval));
       }
       
       else{  const [firstInd,secondInd,firstvalue,secondvalue]=animations[i];
@@ -212,7 +212,7 @@ function mergeSort() {
         setTimeout(() => {
           barOneStyle.backgroundColor='red';
           barTwoStyle.backgroundColor='red';
-        }, i*10);
+        }, i*(1000/arrayval));
         setTimeout(() => {
           audio.play();
           barOneStyle.height=`${firstvalue}px`;
@@ -221,11 +221,11 @@ function mergeSort() {
            barTwoStyle.height=`${secondvalue}px`;
            arrayBars[secondInd].innerHTML=`${secondvalue}`;
            barTwoStyle.color='#e91e63';
-        }, i*10);
+        }, i*(1000/arrayval));
         setTimeout(() => {
           barOneStyle.backgroundColor='#acf755';
           barTwoStyle.backgroundColor='#acf755';
-        }, i*10);
+        }, i*(1000/arrayval));
       }
     }
   }

@@ -1,23 +1,30 @@
-export function getInterpolationAnimation(array){
-    let lo = 0, hi = array.length-1;
-
-    while (lo <= hi && x >= arr[lo] && x <= arr[hi])
-    {
-        if (lo == hi)
-        {;
-            if (arr[lo] == x) return lo;
-            return -1
+export function getInterpolationAnimation(arr,x,animation){
+    let left = 0;
+    let right = arr.length - 1;
+    while (left <= right) {
+       const rangeDelta = arr[right] - arr[left];
+       const indexDelta = right - left;
+       const valueDelta = x - arr[left];
+       if (valueDelta < 0) {
+          return animation;
+       }
+       if (!rangeDelta) {
+        if(arr[left]==x){
+            animation.push([left,x]);
         }
-        let pos = lo + (((double)(hi - lo) /
-            (arr[hi] - arr[lo])) * (x - arr[lo]));
-        if (arr[pos] == x)
-            return pos;
-
-        if (arr[pos] < x)
-            lo = pos + 1;
-
-        else
-            hi = pos - 1;
-    }
-    return -1;
+        return animation; 
+       }
+       const middleIndex = left + Math.floor((valueDelta * indexDelta) / rangeDelta);
+       if (arr[middleIndex] == x) {
+        animation.push([middleIndex,x]);
+          return animation;
+       }
+       animation.push([middleIndex]);
+       if (arr[middleIndex] < x) {
+          left = middleIndex + 1;
+       } else {
+          right = middleIndex ;
+       }
+    };
+    return animation;
 }

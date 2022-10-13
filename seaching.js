@@ -21,6 +21,8 @@ const getbruteforce=document.getElementById('bruteforce');
 getbruteforce.addEventListener("click", bruteForce);
 const getbinarysearch=document.getElementById('binary');
 getbinarysearch.addEventListener("click", binarySearch);
+const getinterpolationsearch=document.getElementById('interpolation');
+getinterpolationsearch.addEventListener("click", interpolationSearch);
 
 // Default array 
 let array=[];
@@ -70,7 +72,7 @@ function generateArray() {
     array=[];
 
     let i=1;
-for(i=1;i<=30;i++){
+for(i=1;i<=arrayval;i++){
 let temp= Math.floor(Math.random()*(50));
 array.push(temp);
 }
@@ -145,4 +147,34 @@ for(let i=0;i<animations.length;i++){
         }, (i+1)*500);
     }
 }
+}
+
+function interpolationSearch(){
+    array.sort((a,b)=> a-b);
+const mainarraygrids = document.getElementsByClassName('grids');
+for(let i=0;i<arrayval;i++){
+    mainarraygrids[i].innerHTML=`${array[i]}`;
+  mainarraygrids[i].style.height=`${array[i]*5+3}px`;
+  mainarraygrids[i].style.backgroundColor='#7f38ff';
+} 
+let animations=getInterpolationAnimation(array,getnumber.value,[]);
+console.log(animations);
+const arraygrids = document.getElementsByClassName('grids');
+   for(let i=0;i<animations.length;i++){
+    setTimeout(async() =>{
+        arraygrids[animations[i]].style.backgroundColor='yellow';
+    }, i*500);
+    if(animations[i].length==1){
+        setTimeout(() => {
+            arraygrids[animations[i]].style.backgroundColor='red';
+        }, (i+1)*500); 
+    }
+    else{
+        const [index,value]=animations[i];
+        setTimeout(() => {
+            audio.play();
+            arraygrids[index].style.backgroundColor='green';
+        }, (i+1)*500); 
+    }
+   }
 }
