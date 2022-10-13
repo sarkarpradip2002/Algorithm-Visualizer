@@ -149,6 +149,7 @@ for(let i=0;i<animations.length;i++){
 }
 }
 
+// Interpolation search animation button
 function interpolationSearch(){
     array.sort((a,b)=> a-b);
 const mainarraygrids = document.getElementsByClassName('grids');

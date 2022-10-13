@@ -3,6 +3,7 @@ import { getMergeSortAnimations } from "./mergesort.js";
 import { getBubbleSortAnimations } from "./bubblesort.js";
 import { getInsertionSortAnimations } from "./insertionsort.js";
 import { getSelectionSortAnimations } from "./selectionsort.js";
+import { getCountSortAnimations } from "./countsort.js";
 
 // Adding audio
 var audio=new Audio('beep3.mp3');
@@ -27,6 +28,8 @@ const getinsertionsort=document.getElementById('insertion');
 getinsertionsort.addEventListener("click", insertionSort);
 const getselectionsort=document.getElementById('selection');
 getselectionsort.addEventListener("click", selectionSort);
+const getcountsort=document.getElementById('count');
+getcountsort.addEventListener("click", countSort);
 
 // Deafult Array
 const body=document.getElementById('mainbody');
@@ -229,3 +232,30 @@ function mergeSort() {
       }
     }
   }
+
+
+ function countSort() {
+  changeheading.textContent='Count Sort';
+    const animations= getCountSortAnimations(array);
+    console.log(animations);
+    const arrayBars = document.getElementsByClassName('bars');
+
+    let index=0;
+    for(let i=0;i<animations.length;i++){
+      let temp=i;
+      for(let j=0;j<animations[temp].length;j++){
+         const bar=arrayBars[index++].style;
+         setTimeout(() => {
+          bar.backgroundColor='yellow';
+          audio.play();
+          bar.height=`${animations[temp][j]}px`;
+          bar.innerHTML=`${animations[temp][j]}`;
+        }, index*(10000/arrayval));
+        setTimeout(() => {
+          bar.backgroundColor='#acf755';
+        }, (index+1)*(10000/arrayval));
+      }
+    
+    }
+
+ } 
